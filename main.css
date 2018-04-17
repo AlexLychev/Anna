@@ -4,33 +4,39 @@ body {
     position: absolute;
     left: 0px;
     top: 0px;
-    width: 1024px;
-    height: 1121px;
+    max-width: 1024px;
+    height: auto;
 }
 
-.h1 {
-    font-size: 32px;
+h1 {
+    display: block;
+    font-size: 2vw;
     font-family: "Open Sans";
-    color: rgb(0, 0, 0);
+    color: black;
     font-weight: bold;
     text-transform: uppercase;
     line-height: 1.375;
     text-align: center;
-    position: absolute;
-    left: 246.125px;
-    top: 93.578px;
+    position: relative;
+}
+
+@media screen and (min-width: 320px) {
+    h1 {
+        font-size: 14px;
+    }
 }
 
 .block {
     display: flex;
-    justify-content: flex-start;
     flex-direction: row;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    width: 1024px;
+    max-width: auto;
+    margin: 0px;
 }
 
 .element {
-    width: 160px;
+    max-width: 160px;
     height: 257px;
     background-color: black;
     margin-left: 1px;
@@ -44,7 +50,7 @@ body {
     filter: grayscale(1);
 }
 
-.image:hover {
+.element:hover .image {
     filter: none;
 }
 
@@ -62,6 +68,11 @@ body {
     position: absolute;
 }
 
-.element:nth-child(2n+1) .text-block{
+.element:nth-child(2n+1) .text-block {
     background-color: #cf5664;
+}
+
+.element:hover .text-block {
+    background-color: #f2cd5e;
+    color: black;
 }
